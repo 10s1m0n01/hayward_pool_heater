@@ -91,7 +91,7 @@ class ActiveModeSwitch : public PoolHeaterSwitch {
   protected:
     void write_state(bool new_state) {
         this->publish_state(new_state);
-        this->parent_->set_passive_mode(!new_state);
+        this->parent_->set_passive_mode(false);
     }
 };
 
@@ -117,7 +117,7 @@ class UpdateStatusSwitch : public PoolHeaterSwitch {
      */
     void write_state(bool state) {
         this->publish_state(state);
-        this->parent_->set_update_active(state);
+        this->parent_->set_update_active(true);
     };
 };
 
